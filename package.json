@@ -4,6 +4,7 @@
   "description": "A Discord bot utilizing data from a user's Letterboxd diary and Chat-GPT's API.",
   "main": "index.js",
   "scripts": {
+    "start": "tsc && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
