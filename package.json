@@ -1,0 +1,22 @@
+{
+  "name": "letterboxd-proj",
+  "version": "1.0.0",
+  "description": "A Discord bot utilizing data from a user's Letterboxd diary and Chat-GPT's API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afoshiok/Letterboxd-Proj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afoshiok/Letterboxd-Proj/issues"
+  },
+  "homepage": "https://github.com/afoshiok/Letterboxd-Proj#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
