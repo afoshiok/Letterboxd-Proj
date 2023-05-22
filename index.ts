@@ -1,17 +1,10 @@
 import axios, { Axios } from "axios";
 import * as cheerio from 'cheerio';
+import { FilmData } from "./types/letterboxd";
 
 const LetterboxdUser = 'FavourOshio' //My Letterboxd username for test
 const diary = `https://letterboxd.com/${LetterboxdUser}/films/diary/for/2023` //Just films for 2023
 
-interface FilmData {
-    title: string,
-    userRating: number
-    releaseDate: number,
-    liked: boolean,
-    rewatched: boolean,
-    // DateWatched: string
-}
 
 const AxiosIntstance: Axios = axios.create()
 
@@ -31,10 +24,6 @@ AxiosIntstance.get(diary)
             const liked: boolean =  $(elem).find('.icon-liked').length > 0
             const rewatched: boolean = $(elem).find('.td-rewatch.center.icon-status-off').length === 0
 
-            // const dayWatched = $(elem).find('.td-day').text()
-            // const monthWatched = $(elem).find('.date').find('strong').text()
-            // // const yearWatched
-            // console.log(title + ' | ' + monthWatched + '' + dayWatched)
             films.push({
                 title,
                 userRating,
