@@ -8,8 +8,8 @@ interface FilmData {
     title: string,
     userRating: number
     releaseDate: number,
-    // Like: boolean,
-    // Rewatch: boolean,
+    liked: boolean,
+    rewatched: boolean,
     // DateWatched: string
 }
 
@@ -28,10 +28,19 @@ AxiosIntstance.get(diary)
             const title: string = $(elem).find('.td-film-details').find('h3').text()
             const userRating: number = parseInt($(elem).find('input.rateit-field').val())
             const releaseDate: number = parseInt($(elem).find('.td-released').text())
+            const liked: boolean =  $(elem).find('.icon-liked').length > 0
+            const rewatched: boolean = $(elem).find('.td-rewatch.center.icon-status-off').length === 0
+
+            // const dayWatched = $(elem).find('.td-day').text()
+            // const monthWatched = $(elem).find('.date').find('strong').text()
+            // // const yearWatched
+            // console.log(title + ' | ' + monthWatched + '' + dayWatched)
             films.push({
                 title,
                 userRating,
-                releaseDate
+                releaseDate,
+                liked,
+                rewatched
             })
         })
 
