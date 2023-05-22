@@ -1,5 +1,5 @@
 import axios, { Axios } from "axios";
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio';
 
 const LetterboxdUser = 'FavourOshio' //My Letterboxd username for test
 const diary = `https://letterboxd.com/${LetterboxdUser}/films/diary/for/2023` //Just films for 2023
@@ -7,7 +7,7 @@ const diary = `https://letterboxd.com/${LetterboxdUser}/films/diary/for/2023` //
 interface FilmData {
     title: string,
     userRating: number
-    // releaseDate: string,
+    releaseDate: number,
     // Like: boolean,
     // Rewatch: boolean,
     // DateWatched: string
@@ -25,12 +25,13 @@ AxiosIntstance.get(diary)
 
         const films: FilmData[] = []
         filmsTable.each((_i, elem) => {
-            const title: string = $(elem)
-            .find('div').text() //FIXME: Trying to access the film title span element
+            const title: string = $(elem).find('.td-film-details').find('h3').text()
             const userRating: number = parseInt($(elem).find('input.rateit-field').val())
+            const releaseDate: number = parseInt($(elem).find('.td-released').text())
             films.push({
                 title,
-                userRating
+                userRating,
+                releaseDate
             })
         })
 
