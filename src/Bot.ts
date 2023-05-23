@@ -8,7 +8,7 @@ const token = process.env.TOKEN
 console.log("Bot is starting...")
 
 const client = new Client({
-    intents: []
+    intents: [] //FIXME: Look into Guilds
 })
 
 interactionCreate(client)
