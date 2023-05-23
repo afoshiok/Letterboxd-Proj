@@ -4,7 +4,7 @@
   "description": "A Discord bot utilizing data from a user's Letterboxd diary and Chat-GPT's API.",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "ts-node src/Bot.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/cheerio": "^0.22.31",
+    "@types/node": "^20.2.3",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "eslint": "^8.40.0",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.11.0"
   }
 }

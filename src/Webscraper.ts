@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import * as cheerio from 'cheerio';
-import { FilmData } from "./types/letterboxd";
+import { FilmData } from "src/types/letterboxd";
 
 const LetterboxdUser = 'FavourOshio' //My Letterboxd username for test
 const diary = `https://letterboxd.com/${LetterboxdUser}/films/diary/for/2023` //Just films for 2023
